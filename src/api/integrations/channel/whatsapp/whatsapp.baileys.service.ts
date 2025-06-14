@@ -649,7 +649,7 @@ export class BaileysStartupService extends ChannelStartupService {
       generateHighQualityLinkPreview: true,
       getMessage: async (key) => (await this.getMessage(key)) as Promise<proto.IMessage>,
       ...browserOptions,
-      markOnlineOnConnect: this.localSettings.alwaysOnline,
+      markOnlineOnConnect: this.localSettings.alwaysOnline === true,
       retryRequestDelayMs: 350,
       maxMsgRetryCount: 4,
       fireInitQueries: true,
